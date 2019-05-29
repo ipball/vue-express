@@ -8,6 +8,11 @@ const app = express();
 app.use(bodyPrser.json());
 app.use(cors());
 
+// root page
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
+
 const posts = require('./routes/api/posts');
 app.use('/api/posts', posts);
 // handle production
